@@ -46,6 +46,77 @@
             background-color: green;
             transition: width 0.3s ease-in-out;
         }
+         /* Dropdown Button Styling */
+        .navbar .nav-item.dropdown .nav-link {
+            position: relative; /* Necessary for dropdown positioning */
+            padding-right: 30px; /* Add space for the dropdown arrow */
+        }
+        
+        /* Dropdown Toggle Icon (caret) */
+        .navbar .nav-item.dropdown .nav-link::after {
+            content: "\f0d7"; /* Unicode for down arrow (Bootstrap's default caret icon) */
+            font-family: 'FontAwesome';
+            position: absolute;
+            right: 10px;
+            font-size: 16px;
+        }
+        
+        /* Dropdown Menu Styling */
+        .navbar .dropdown-menu {
+            background-color: #fff; /* White background for dropdown */
+            border: 1px solid #ddd; /* Light border around the dropdown */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Soft shadow */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+        }
+        
+        /* Show the dropdown when active (on hover or click) */
+        .navbar .nav-item.dropdown.show .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        /* Dropdown Item Styling */
+        .navbar .dropdown-item {
+            color: #333; /* Default color for dropdown items */
+            padding: 10px 20px; /* Space around the text */
+            font-size: 16px;
+        }
+        
+        /* Hover Effect on Dropdown Items */
+        .navbar .dropdown-item:hover {
+            background-color: #007bff; /* Blue background on hover */
+            color: #fff; /* White text on hover */
+        }
+        
+        /* Disable Hover for Active Dropdown Item */
+        .navbar .dropdown-item:disabled {
+            background-color: transparent;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        /* Make the dropdown fully visible on hover */
+        .navbar .nav-item.dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        /* Optional: Add space between dropdown items */
+        .navbar .dropdown-item + .dropdown-item {
+            margin-top: 2px;
+        }
+        
+        /* Styling for Dropdown Divider */
+        .navbar .dropdown-divider {
+            background-color: #f1f1f1; /* Light divider color */
+            margin: 8px 0;
+        }
+
         .hero-section {
             background: url('intergrated-facility-management.jpg') no-repeat center center/cover;
             height: 60vh;
