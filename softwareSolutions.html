@@ -110,63 +110,130 @@
         <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/padding/padding.css">
 
         <style>
-            .nav-link {
-                position: relative;
-                text-decoration: none;
-                color: inherit;
+           /* Hover effect for links */
+        /* Define the slow zoom-in animation */
+        @keyframes zoomIn {
+            0% {
+                transform: scale(1); /* Initial size */
             }
-
-            .nav-link:hover::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 2px;
-                background-color: green;
-                transition: width 0.3s ease-in-out;
+            100% {
+                transform: scale(1.1); /* Zoom in slowly */
             }
+        }
+        /* Dropdown Button Styling */
+        .navbar .nav-item.dropdown .nav-link {
+            position: relative; /* Necessary for dropdown positioning */
+            padding-right: 30px; /* Add space for the dropdown arrow */
+        }
+        
+        /* Dropdown Toggle Icon (caret) */
+        .navbar .nav-item.dropdown .nav-link::after {
+            content: "\f0d7"; /* Unicode for down arrow (Bootstrap's default caret icon) */
+            font-family: 'FontAwesome';
+            position: absolute;
+            right: 10px;
+            font-size: 16px;
+        }
+        
+        /* Dropdown Menu Styling */
+        .navbar .dropdown-menu {
+            background-color: #fff; /* White background for dropdown */
+            border: 1px solid #ddd; /* Light border around the dropdown */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Soft shadow */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+        }
+        
+        /* Show the dropdown when active (on hover or click) */
+        .navbar .nav-item.dropdown.show .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        /* Dropdown Item Styling */
+        .navbar .dropdown-item {
+            color: #333; /* Default color for dropdown items */
+            padding: 10px 20px; /* Space around the text */
+            font-size: 16px;
+        }
+        
+        /* Hover Effect on Dropdown Items */
+        .navbar .dropdown-item:hover {
+            background-color: #007bff; /* Blue background on hover */
+            color: #fff; /* White text on hover */
+        }
+        
+        /* Disable Hover for Active Dropdown Item */
+        .navbar .dropdown-item:disabled {
+            background-color: transparent;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        /* Make the dropdown fully visible on hover */
+        .navbar .nav-item.dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        /* Optional: Add space between dropdown items */
+        .navbar .dropdown-item + .dropdown-item {
+            margin-top: 2px;
+        }
+        
+        /* Styling for Dropdown Divider */
+        .navbar .dropdown-divider {
+            background-color: #f1f1f1; /* Light divider color */
+            margin: 8px 0;
+        }
 
-            .nav-link::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 0;
-                height: 2px;
-                background-color: green;
-                transition: width 0.3s ease-in-out;
-            }
 
-            .navbar .nav-item.dropdown .nav-link {
-                position: relative;
-                padding-right: 30px;
-            }
+        .carousel-item {
+            animation: zoomIn 20s infinite alternate; /* 60 seconds for a slow zoom */
+        }
 
-            .navbar .nav-item.dropdown .nav-link::after {
-                content: "\f0d7";
-                font-family: 'FontAwesome';
-                position: absolute;
-                right: 10px;
-                font-size: 16px;
-            }
+        /* Ensure that the image fills the container but maintains aspect ratio */
+        .carousel-item img {
+            object-fit: cover; /* Ensures the image covers the entire area */
+            width: 100%;
+            height: 100%;
+        }
 
-            .navbar .dropdown-menu {
-                background-color: #fff;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-                opacity: 0;
-                visibility: hidden;
-                transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
-            }
+        /* Optional: Add a transition for smoother zoom-in */
+        .carousel-caption {
+            transition: all 1s ease;
+        }
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+            color: inherit; /* Ensures the link retains the theme color */
+        }
 
-            .navbar .nav-item.dropdown.show .dropdown-menu {
-                opacity: 1;
-                visibility: visible;
-                transition: opacity 0.3s ease-in-out;
-            }
+        .nav-link:hover::after {
+            content: "";
+            position: absolute;
+            bottom: 0; /* Positions the line directly under the text */
+            left: 0;
+            width: 100%;
+            height: 2px; /* Thickness of the underline */
+            background-color: green; /* Color of the line, can be customized */
+            transition: width 0.3s ease-in-out; /* Smooth animation */
+        }
 
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: green;
+            transition: width 0.3s ease-in-out;
+        }
             .hero-section {
                 background-image: url('softwareSolution.jpg');
                 background-size: cover;
