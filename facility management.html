@@ -28,34 +28,17 @@
     <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/margin/margin.css">
     <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/padding/padding.css">
     <style>
-        .nav-link {
-            position: relative;
-            text-decoration: none;
-            color: inherit; /* Ensures the link retains the theme color */
+         /* Hover effect for links */
+        /* Define the slow zoom-in animation */
+        @keyframes zoomIn {
+            0% {
+                transform: scale(1); /* Initial size */
+            }
+            100% {
+                transform: scale(1.1); /* Zoom in slowly */
+            }
         }
-
-        .nav-link:hover::after {
-            content: "";
-            position: absolute;
-            bottom: 0; /* Positions the line directly under the text */
-            left: 0;
-            width: 100%;
-            height: 2px; /* Thickness of the underline */
-            background-color: green; /* Color of the line, can be customized */
-            transition: width 0.3s ease-in-out; /* Smooth animation */
-        }
-
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: green;
-            transition: width 0.3s ease-in-out;
-        }
-         /* Dropdown Button Styling */
+        /* Dropdown Button Styling */
         .navbar .nav-item.dropdown .nav-link {
             position: relative; /* Necessary for dropdown positioning */
             padding-right: 30px; /* Add space for the dropdown arrow */
@@ -126,6 +109,49 @@
             margin: 8px 0;
         }
 
+
+        .carousel-item {
+            animation: zoomIn 20s infinite alternate; /* 60 seconds for a slow zoom */
+        }
+
+        /* Ensure that the image fills the container but maintains aspect ratio */
+        .carousel-item img {
+            object-fit: cover; /* Ensures the image covers the entire area */
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Optional: Add a transition for smoother zoom-in */
+        .carousel-caption {
+            transition: all 1s ease;
+        }
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+            color: inherit; /* Ensures the link retains the theme color */
+        }
+
+        .nav-link:hover::after {
+            content: "";
+            position: absolute;
+            bottom: 0; /* Positions the line directly under the text */
+            left: 0;
+            width: 100%;
+            height: 2px; /* Thickness of the underline */
+            background-color: green; /* Color of the line, can be customized */
+            transition: width 0.3s ease-in-out; /* Smooth animation */
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: green;
+            transition: width 0.3s ease-in-out;
+        }
         .hero-section {
             background: url('intergrated-facility-management.jpg') no-repeat center center/cover;
             height: 60vh;
