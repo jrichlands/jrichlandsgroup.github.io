@@ -48,6 +48,17 @@
             position: relative; /* Necessary for dropdown positioning */
             padding-right: 30px; /* Add space for the dropdown arrow */
         }
+
+         .navbar {
+        background-color: white !important; /* Makes navbar white */
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+    
+          /* Add a shadow when scrolling */
+          .navbar.scrolled {
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          }
+
         
         /* Dropdown Toggle Icon (caret) */
         .navbar .nav-item.dropdown .nav-link::after {
