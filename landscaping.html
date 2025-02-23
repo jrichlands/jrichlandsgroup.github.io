@@ -20,54 +20,17 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
     
-    .navbar {
-    background-color: white !important; /* Makes navbar white */
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-
-      /* Add a shadow when scrolling */
-      .navbar.scrolled {
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
-
-    
-    /* Set a subtle background color with opacity on hover or while active */
-    .navbar-nav .nav-link {
-      color: white; /* Make text white for better contrast */
-      transition: color 0.3s ease; /* Smooth transition for text color */
-      position: relative;
-      text-decoration: none;
-    }
-
-    /*.nav-link {
-      position: relative;
-      text-decoration: none;
-      color: White; /* Ensures the link retains the theme color */
-    }*/
-
-    .nav-link:hover::after {
-      content: "";
-      position: absolute;
-      bottom: 0; /* Positions the line directly under the text */
-      left: 0;
-      width: 100%;
-      height: 2px; /* Thickness of the underline */
-      background-color: green; /* Color of the line, can be customized */
-      transition: width 0.3s ease-in-out; /* Smooth animation */
-    }
-
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: green;
-      transition: width 0.3s ease-in-out;
-    }
-
- /* Dropdown Button Styling */
+     /* Hover effect for links */
+        /* Define the slow zoom-in animation */
+        @keyframes zoomIn {
+            0% {
+                transform: scale(1); /* Initial size */
+            }
+            100% {
+                transform: scale(1.1); /* Zoom in slowly */
+            }
+        }
+        /* Dropdown Button Styling */
         .navbar .nav-item.dropdown .nav-link {
             position: relative; /* Necessary for dropdown positioning */
             padding-right: 30px; /* Add space for the dropdown arrow */
@@ -137,6 +100,81 @@
             background-color: #f1f1f1; /* Light divider color */
             margin: 8px 0;
         }
+
+
+        .carousel-item {
+            animation: zoomIn 20s infinite alternate; /* 60 seconds for a slow zoom */
+        }
+
+        /* Ensure that the image fills the container but maintains aspect ratio */
+        .carousel-item img {
+            object-fit: cover; /* Ensures the image covers the entire area */
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Optional: Add a transition for smoother zoom-in */
+        .carousel-caption {
+            transition: all 1s ease;
+        }
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+            color: inherit; /* Ensures the link retains the theme color */
+        }
+
+        .nav-link:hover::after {
+            content: "";
+            position: absolute;
+            bottom: 0; /* Positions the line directly under the text */
+            left: 0;
+            width: 100%;
+            height: 2px; /* Thickness of the underline */
+            background-color: green; /* Color of the line, can be customized */
+            transition: width 0.3s ease-in-out; /* Smooth animation */
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: green;
+            transition: width 0.3s ease-in-out;
+        }
+
+
+         .hero-section {
+             background-image: url('engineering.jpg');
+             background-size: cover;
+             background-position: center;
+             height: 60vh;
+             color: white;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+         }
+        .hero-section h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 1.2s ease-out;
+        }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
 
     
     .hero-section {
